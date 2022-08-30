@@ -19,7 +19,9 @@ Perhaps this can be made even simpler in the future, but for now, here is how I 
 - Obtain a MS Word file for the New English Translation Noteless Bible
 - Copy the book of the Bible of interest to another MS Word file.
 - Save that file, e.g., NET-Matthew.docx and keep for future use.
+-- more detail here
 - Save a text copy of that file, e.g., NET-Matthew-ASCII.txt and keep for future use.
-- 
+-- more detail here
+- the next thing
 
 # The End
