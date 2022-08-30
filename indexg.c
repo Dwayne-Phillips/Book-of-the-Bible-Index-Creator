@@ -95,6 +95,7 @@ while (fgets(in_line, sizeof(in_line), input_file)) {
    } /* ends if word is in the in_line */ 
 } /* ends while reading the lines of the file */
 
+strcat(out_line, "\n");
 fputs(out_line, output_file);
 
    fclose(input_file);
