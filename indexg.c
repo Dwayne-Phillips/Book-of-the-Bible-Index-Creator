@@ -1,5 +1,6 @@
 
 
+/* 31 Aug '22 */
 
 /********************************************************/
 /********************************************************/
@@ -84,15 +85,15 @@ strcat(out_line, ", ");
 while (fgets(in_line, sizeof(in_line), input_file)) {
    memset(chapter, 0, strlen(chapter)); /* fill chapter with nothing */
    ip=0; op=0;
-  
+
    if(strstr(in_line, word) != 0){
      while(in_line[ip] != ']'){
         chapter[ip] = in_line[ip];
         ip++;
-     } 
+     }
      strcat(out_line, chapter);
      strcat(out_line, ", ");
-   } /* ends if word is in the in_line */ 
+   } /* ends if word is in the in_line */
 } /* ends while reading the lines of the file */
 
 strcat(out_line, "\n");
@@ -119,5 +120,3 @@ void print_usage()
    printf("\nusage: indexg word in-file out-file\n\n");
    printf("\n" );
 }  /* ends print_usage */
-
-
