@@ -30,7 +30,7 @@
 #define  MIN_PARAMS 3
 #define  MAX_PARAMS 3
 #define  VERSION "indexf Version 1.0 - 28 August 2022"
-#define  B 500000
+#define  B 20000
 
 
 
@@ -79,11 +79,10 @@ int main (int argc, char *argv[])
       exit(1);
    }  /* ends if output_file */
 
-
    bytes_read = B;
    while(bytes_read == B){
-      ip = 0;
       op = 0;
+      ip = 0;
       bytes_read = fread(in_buffer, sizeof(char), B, input_file);
       printf("\nRead %ld (%d)", bytes_read, B);
       while(ip < bytes_read){ /* stroll through the bytes that were read */
@@ -97,47 +96,33 @@ printf("-%c-",in_buffer[ip]);
 ************/
 
          if(in_buffer[ip] >= 32 && in_buffer[ip] <= 126){ /* PRINTABLE RANGE */
-            /* copy char and increment pointers */
-            /* isdigit and isspace */
+            /* check for digits, if a digit, special things */
             if(isdigit(in_buffer[ip])){ /* HIT A DIGIT */
                /****** 
                   insert a new line
                   copy until you hit a space
-                  put a "]"
                   put the space 
                ***********/
                out_buffer[op] = '\n'; op++;
                out_buffer[op] = '\n'; op++;
                while(isspace(in_buffer[ip]) == 0){ /* while NOT A SPACE */
                   out_buffer[op] = in_buffer[ip];
+/***printf("\nIN %c OUT %c", in_buffer[ip], out_buffer[op]);***/
                   ip++;
                   op++; 
                } /* ends while NOT A SPACE */ 
-               out_buffer[op] = ']'; op++;
+               out_buffer[op] = ']'; 
+               op++;
             } /* ends HIT A DIGIT */
             else{ /* PRINTABLE RANGE and NOT A DIGIT */
                out_buffer[op] = in_buffer[ip];
+/***printf("\nIN %c OUT %c", in_buffer[ip], out_buffer[op]);***/
                op++;
                ip++;
             } /* ends PRINTABLE RANGE and NOT A DIGIT */
          } /* ends if char is within PRINTABLE RANGE */
          else{ /* not in PRINTABLE RANGE, so increment input pointer */
-               /**********
-                 4:30 PM Sunday 
-                 I would like to strip off the titles that appear before
-                 sections of verses. If a space appears right after new line,
-                 that is not a title. If a non-space appears right after new line,
-                 that is a title, and I want to strip it (do nothing until you hit
-                 a new line and a space)
-                 THIS SEEMS TO WORK
-               ***********/
             ip++;
-            if(isspace(in_buffer[ip]) == 0){ /* Hit a Title so stroll thru it */
-               while(in_buffer[ip] >= 32 && in_buffer[ip] <= 126){ /* PRINTABLE RANGE */
-                 ip++;
-               } /* ends while strolling thru the title */
-               ip++;
-            } /* finished if Hit a Title */
          } /* ends not in PRINTABLE RANGE */
       }  /* ends while strolling through the bytes that have been read */
       fwrite(out_buffer, sizeof(char), op, output_file);
