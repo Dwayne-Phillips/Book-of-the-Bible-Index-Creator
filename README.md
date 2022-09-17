@@ -42,6 +42,7 @@ Perhaps this can be made even simpler in the future, but for now, here is how I 
   -  In Word, Save As, .txt, Mac OS, CR only, and Allow Character Substitution.
   -  Save to a .txt file such as NET-Matthew-ASCII.txt.
   -  Keep that .txt file for future use. You will use it in a command every time you index a work.
+- Remove all the section titles in the .txt file such as NET-Matthew-ASCII.txt. THIS IS IMPORTANT! The following programs won't handle those section titles correctly
 - Run the `indexf` program to create a .txt file that has one verse per paragraph.
   - `indexf NET-Matthew-ASCII.txt NET-Matthew-ASCII-formatted.txt`
   - The result file has lines that appear like: `28:20] teaching them to obey everything I have commanded you...`
