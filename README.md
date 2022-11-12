@@ -56,5 +56,11 @@ Perhaps this can be made even simpler in the future, but for now, here is how I 
 
 Again, I can probably make this simpler in the future. Suggestions are welcome.
 
+# Better Version Two
+
+Here is a faster way to create an index if you have a text file containing the words you want to index. One word per line in a word list txt file.
+
+- `index-word-list wordlist.txt NET-Matthew-ASCII-formatted.txt out.txt`
+
 
 # The End
