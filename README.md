@@ -38,11 +38,15 @@ Perhaps this can be made even simpler in the future, but for now, here is how I 
   - This downloads a .zip file that, when decompressed, provides a NETBible_Noteless.doc file
 - Copy the book of the Bible of interest to another MS Word file.
 - Save that file, e.g., NET-Matthew.docx and keep for future use.
-- While editing NET-Matthew.docx (in MS Word for Mac)
+- Remove all the section titles in the docx version. THIS IS IMPORTANT
+  - Save as tmp.docx
+  - Use the Styles pane
+  - Find the style of section titles (it is usually ParagraphTitle)
+  - click on the down arrow, choose select all, press fn-delete to delete all those section titles
+- While editing NET-Matthew.docx (or tmp.docx if you have done the above) (in MS Word for Mac)
   -  In Word, Save As, .txt, Mac OS, CR only, and Allow Character Substitution.
   -  Save to a .txt file such as NET-Matthew-ASCII.txt.
   -  Keep that .txt file for future use. You will use it in a command every time you index a work.
-- Remove all the section titles in the .txt file such as NET-Matthew-ASCII.txt. THIS IS IMPORTANT! The following programs won't handle those section titles correctly
 - Run the `indexf` program to create a .txt file that has one verse per paragraph.
   - `indexf NET-Matthew-ASCII.txt NET-Matthew-ASCII-formatted.txt`
   - The result file has lines that appear like: `28:20] teaching them to obey everything I have commanded you...`
