@@ -24,7 +24,7 @@
 #define  MIN_PARAMS 4
 #define  MAX_PARAMS 4
 #define  VERSION "indexg Version 1.0 - 28 August 2022"
-#define  B 500
+#define  B 10000
 
 
 
