@@ -22,7 +22,7 @@
 #define  MIN_PARAMS 4
 #define  MAX_PARAMS 4
 #define  VERSION "indexg Version 2.0 - 11 November 2022"
-#define  B 1000
+#define  B 10000
 
 /**************** function declarations *****************/
 void print_usage(void);
